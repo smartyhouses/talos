@@ -1,16 +1,18 @@
 module github.com/siderolabs/talos
 
-go 1.22.7
+go 1.23.0
+
+toolchain go1.23.1
 
 replace (
 	// see e.g. https://github.com/grpc/grpc-go/issues/6696
-	cloud.google.com/go => cloud.google.com/go v0.100.2
+	cloud.google.com/go => cloud.google.com/go v0.115.1
 
 	// forked coredns so we don't carry caddy and other stuff into the Talos
 	github.com/coredns/coredns => github.com/siderolabs/coredns v1.11.53
 
 	// see https://github.com/mdlayher/kobject/pull/5
-	github.com/mdlayher/kobject => github.com/smira/kobject v0.0.0-20240304111826-49c8d4613389
+	github.com/mdlayher/kobject => github.com/smira/kobject v0.0.0-20200520190114-19ca17470d7d
 
 	// Use nested module.
 	github.com/siderolabs/talos/pkg/machinery => ./pkg/machinery
@@ -41,8 +43,8 @@ require (
 )
 
 require (
-	cloud.google.com/go/compute/metadata v0.5.0
-	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.13.0
+	cloud.google.com/go/compute/metadata v0.5.1
+	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.14.0
 	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.7.0
 	github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azcertificates v1.1.0
 	github.com/Azure/azure-sdk-for-go/sdk/security/keyvault/azkeys v1.1.0
@@ -58,16 +60,16 @@ require (
 	github.com/containerd/cgroups/v3 v3.0.3
 	github.com/containerd/containerd/api v1.8.0-rc.3
 	github.com/containerd/containerd/v2 v2.0.0-rc.4
-	github.com/containerd/errdefs v0.1.0
+	github.com/containerd/errdefs v0.2.0
 	github.com/containerd/platforms v0.2.1
 	github.com/containerd/typeurl/v2 v2.2.0
 	github.com/containernetworking/cni v1.2.3
 	github.com/containernetworking/plugins v1.5.1
 	github.com/coredns/coredns v1.11.3
 	github.com/coreos/go-iptables v0.8.0
-	github.com/cosi-project/runtime v0.5.5
+	github.com/cosi-project/runtime v0.6.3
 	github.com/distribution/reference v0.6.0
-	github.com/docker/docker v27.2.0+incompatible
+	github.com/docker/docker v27.2.1+incompatible
 	github.com/docker/go-connections v0.5.0
 	github.com/dustin/go-humanize v1.0.1
 	github.com/ecks/uefi v0.0.0-20221116212947-caef65d070eb
@@ -84,7 +86,7 @@ require (
 	github.com/google/go-tpm v0.9.1
 	github.com/google/nftables v0.2.0
 	github.com/google/uuid v1.6.0
-	github.com/gopacket/gopacket v1.2.0
+	github.com/gopacket/gopacket v1.3.0
 	github.com/gosuri/uiprogress v0.0.1
 	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.1.0
 	github.com/hashicorp/go-cleanhttp v0.5.2
@@ -102,7 +104,7 @@ require (
 	github.com/martinlindhe/base36 v1.1.1
 	github.com/mattn/go-isatty v0.0.20
 	github.com/mdlayher/arp v0.0.0-20220512170110-6706a2966875
-	github.com/mdlayher/ethtool v0.1.0
+	github.com/mdlayher/ethtool v0.2.0
 	github.com/mdlayher/genetlink v1.3.2
 	github.com/mdlayher/kobject v0.0.0-20200520190114-19ca17470d7d
 	github.com/mdlayher/netlink v1.7.2
@@ -131,7 +133,7 @@ require (
 	github.com/siderolabs/discovery-client v0.1.9
 	github.com/siderolabs/gen v0.5.0
 	github.com/siderolabs/go-api-signature v0.3.6
-	github.com/siderolabs/go-blockdevice v0.4.7
+	github.com/siderolabs/go-blockdevice v0.4.8
 	github.com/siderolabs/go-blockdevice/v2 v2.0.1
 	github.com/siderolabs/go-circular v0.2.0
 	github.com/siderolabs/go-cmd v0.1.1
@@ -153,7 +155,7 @@ require (
 	github.com/siderolabs/net v0.4.0
 	github.com/siderolabs/protoenc v0.2.1
 	github.com/siderolabs/siderolink v0.3.10
-	github.com/siderolabs/talos/pkg/machinery v1.8.0-alpha.2
+	github.com/siderolabs/talos/pkg/machinery v1.8.0-beta.0
 	github.com/spf13/cobra v1.8.1
 	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify v1.9.0
@@ -176,12 +178,12 @@ require (
 	golang.org/x/text v0.18.0
 	golang.org/x/time v0.6.0
 	golang.zx2c4.com/wireguard/wgctrl v0.0.0-20230429144221-925a1e7659e6
-	google.golang.org/grpc v1.66.0
+	google.golang.org/grpc v1.66.2
 	google.golang.org/protobuf v1.34.2
 	gopkg.in/yaml.v3 v3.0.1
 	k8s.io/klog/v2 v2.130.1
 	kernel.org/pub/linux/libs/security/libcap/cap v1.2.70
-	sigs.k8s.io/hydrophone v0.6.1-0.20240718103601-b92baf7e0b04
+	sigs.k8s.io/hydrophone v0.6.1-0.20240902175800-8aebfa7619aa
 	sigs.k8s.io/yaml v1.4.0
 )
 
@@ -235,7 +237,7 @@ require (
 	github.com/docker/docker-credential-helpers v0.7.0 // indirect
 	github.com/docker/go-units v0.5.0 // indirect
 	github.com/emicklei/dot v1.6.2 // indirect
-	github.com/emicklei/go-restful/v3 v3.11.2 // indirect
+	github.com/emicklei/go-restful/v3 v3.12.1 // indirect
 	github.com/evanphx/json-patch v5.9.0+incompatible // indirect
 	github.com/exponent-io/jsonpath v0.0.0-20151013193312-d6023ce2651d // indirect
 	github.com/felixge/httpsnoop v1.0.4 // indirect
@@ -245,9 +247,9 @@ require (
 	github.com/go-errors/errors v1.4.2 // indirect
 	github.com/go-logr/logr v1.4.2 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
-	github.com/go-openapi/jsonpointer v0.20.2 // indirect
-	github.com/go-openapi/jsonreference v0.20.4 // indirect
-	github.com/go-openapi/swag v0.22.9 // indirect
+	github.com/go-openapi/jsonpointer v0.21.0 // indirect
+	github.com/go-openapi/jsonreference v0.21.0 // indirect
+	github.com/go-openapi/swag v0.23.0 // indirect
 	github.com/go-resty/resty/v2 v2.9.1 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang-jwt/jwt/v4 v4.5.0 // indirect
@@ -342,7 +344,7 @@ require (
 	go.starlark.net v0.0.0-20230525235612-a134d8f9ddca // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/crypto v0.27.0 // indirect
-	golang.org/x/exp v0.0.0-20240506185415-9bf2ced13842 // indirect
+	golang.org/x/exp v0.0.0-20240719175910-8a7402abbf56 // indirect
 	golang.org/x/mod v0.20.0 // indirect
 	golang.org/x/tools v0.24.0 // indirect
 	golang.zx2c4.com/wintun v0.0.0-20230126152724-0fa3db229ce2 // indirect
@@ -353,7 +355,7 @@ require (
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	k8s.io/cli-runtime v0.31.1 // indirect
-	k8s.io/kube-openapi v0.0.0-20240709000822-3c01b740850f // indirect
+	k8s.io/kube-openapi v0.0.0-20240816214639-573285566f34 // indirect
 	k8s.io/utils v0.0.0-20240711033017-18e509b52bc8 // indirect
 	kernel.org/pub/linux/libs/security/libcap/psx v1.2.70 // indirect
 	rsc.io/qr v0.2.0 // indirect
